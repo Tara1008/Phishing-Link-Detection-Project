@@ -1,0 +1,17 @@
+# Environment Variables & Secrets
+.env
+.env.*
+!.env.example
+backend/.env
+frontend/.env
+
+# Dependencies & Build Output
+node_modules/
+dist/
+build/
+.cache/
+
+# OS & Editor Files
+.DS_Store
+.vscode/
+*.log
