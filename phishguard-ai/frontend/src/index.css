@@ -1,0 +1,142 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── Base resets ─────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; }
+
+:root {
+  --bg-primary:    #f8fafc;
+  --bg-secondary:  #f1f5f9;
+  --text-primary:  #0f172a;
+  --text-secondary:#475569;
+  --border:        #e2e8f0;
+  --card-bg:       #ffffff;
+  --shadow-sm:     0 1px 3px rgba(0,0,0,.06);
+  --shadow-md:     0 4px 24px rgba(0,0,0,.06);
+  --shadow-lg:     0 8px 40px rgba(0,0,0,.10);
+}
+
+.dark {
+  --bg-primary:    #0b1120;
+  --bg-secondary:  #111827;
+  --text-primary:  #f1f5f9;
+  --text-secondary:#94a3b8;
+  --border:        #1e293b;
+  --card-bg:       #111827;
+  --shadow-sm:     0 1px 3px rgba(0,0,0,.3);
+  --shadow-md:     0 4px 24px rgba(0,0,0,.3);
+  --shadow-lg:     0 8px 40px rgba(0,0,0,.5);
+}
+
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* ── Scrollbar ───────────────────────────────────────── */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 999px; }
+.dark ::-webkit-scrollbar-thumb { background: #334155; }
+
+/* ── Glass card ──────────────────────────────────────── */
+.glass {
+  background: rgba(255,255,255,0.7);
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  border: 1px solid rgba(255,255,255,0.6);
+}
+.dark .glass {
+  background: rgba(17,24,39,0.75);
+  border: 1px solid rgba(255,255,255,0.06);
+}
+
+/* ── Gradient text ───────────────────────────────────── */
+.gradient-text {
+  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #14b8a6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ── Animated gradient border ────────────────────────── */
+.gradient-border {
+  position: relative;
+  background: var(--card-bg);
+}
+.gradient-border::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  background: linear-gradient(135deg, #6366f1, #8b5cf6, #14b8a6, #6366f1);
+  background-size: 300% 300%;
+  animation: gradient 4s ease infinite;
+  z-index: -1;
+}
+
+/* ── Risk gauge colors ───────────────────────────────── */
+.risk-safe       { color: #22c55e; }
+.risk-low        { color: #84cc16; }
+.risk-suspicious { color: #f59e0b; }
+.risk-high       { color: #f97316; }
+.risk-danger     { color: #ef4444; }
+
+/* ── Shimmer skeleton ────────────────────────────────── */
+.skeleton {
+  background: linear-gradient(90deg, #e2e8f0 25%, #f1f5f9 50%, #e2e8f0 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: 8px;
+}
+.dark .skeleton {
+  background: linear-gradient(90deg, #1e293b 25%, #334155 50%, #1e293b 75%);
+  background-size: 200% 100%;
+}
+
+/* ── Blob animation helper ───────────────────────────── */
+.blob { animation: blob 7s infinite; }
+.blob-delay-2 { animation-delay: 2s; }
+.blob-delay-4 { animation-delay: 4s; }
+
+/* ── Custom focus ring ───────────────────────────────── */
+.focus-ring:focus-visible {
+  outline: 2px solid #6366f1;
+  outline-offset: 2px;
+}
+
+/* ── Smooth page transitions ─────────────────────────── */
+.page-enter { opacity: 0; transform: translateY(16px); }
+.page-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+/* ── Confetti canvas ─────────────────────────────────── */
+#confetti-canvas {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+/* ── Status badges ───────────────────────────────────── */
+.badge-safe        { @apply bg-green-100  text-green-700  dark:bg-green-900/30  dark:text-green-400; }
+.badge-suspicious  { @apply bg-amber-100  text-amber-700  dark:bg-amber-900/30  dark:text-amber-400; }
+.badge-phishing    { @apply bg-red-100    text-red-700    dark:bg-red-900/30    dark:text-red-400; }
+.badge-info        { @apply bg-blue-100   text-blue-700   dark:bg-blue-900/30   dark:text-blue-400; }
+.badge-warning     { @apply bg-orange-100 text-orange-700 dark:bg-orange-900/30 dark:text-orange-400; }
+.badge-critical    { @apply bg-red-100    text-red-800    dark:bg-red-900/30    dark:text-red-300; }
+
+/* ── Input glow ──────────────────────────────────────── */
+.url-input:focus {
+  box-shadow: 0 0 0 4px rgba(99,102,241,0.15), 0 0 30px rgba(99,102,241,0.1);
+}
