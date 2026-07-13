@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "target": "esnext",
-    "module": "esnext",
+    "module": "NodeNext",
     "jsx": "react-jsx",
     "moduleResolution": "nodenext",
     "strict": true,
@@ -15,3 +15,7 @@
   },
   "include": ["src"]
 }
+
+
+
+
