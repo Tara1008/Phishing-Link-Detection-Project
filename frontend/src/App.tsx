@@ -1,12 +1,12 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Toaster } from 'react-hot-toast';
-import { ThemeProvider } from './context/ThemeContext';
-import Navbar      from './components/layout/Navbar';
-import Footer      from './components/layout/Footer';
-import LandingPage from './pages/LandingPage';
-import ScanPage    from './pages/ScanPage';
-import HistoryPage from './pages/HistoryPage';
-import TipsPage    from './pages/TipsPage';
+import { ThemeProvider } from './context/ThemeContext.tsx';
+import Navbar      from './components/layout/Navbar.js';
+import Footer      from './components/layout/Footer.tsx';
+import LandingPage from './pages/LandingPage.tsx';
+import ScanPage    from './pages/ScanPage.tsx';
+import HistoryPage from './pages/HistoryPage.tsx';
+import TipsPage    from './pages/TipsPage.tsx';
 
 export default function App() {
   return (
