@@ -2,16 +2,13 @@
   "compilerOptions": {
     "target": "esnext",
     "module": "NodeNext",
+    "moduleResolution": "NodeNext",
     "jsx": "react-jsx",
-    "moduleResolution": "nodenext",
     "strict": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
-    "baseUrl": "./src",
-    "paths": {
-      "*": ["./types/*"]
-    }
+    "baseUrl": "./src"
   },
   "include": ["src"]
 }
