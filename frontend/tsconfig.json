@@ -3,10 +3,15 @@
     "target": "esnext",
     "module": "esnext",
     "jsx": "react-jsx",
+    "moduleResolution": "nodenext",
     "strict": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true
+    "forceConsistentCasingInFileNames": true,
+    "baseUrl": "./src",
+    "paths": {
+      "*": ["./types/*"]
+    }
   },
   "include": ["src"]
 }
