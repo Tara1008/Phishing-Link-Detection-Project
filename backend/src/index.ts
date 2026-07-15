@@ -13,7 +13,7 @@ import statsRouter    from './routes/stats';
 dotenv.config();
 
 const app  = express();
-const PORT = Number(process.env.PORT ?? 3306);
+const PORT = Number(process.env.PORT ?? 3001);
 
 // ── Middleware ───────────────────────────────────────────────────
 app.use(helmet());
