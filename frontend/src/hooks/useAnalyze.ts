@@ -40,6 +40,8 @@ export function useAnalyze(): UseAnalyzeReturn {
         url: url.trim(),
         session_id: getSessionId(),
       });
+      //added in git
+      console.log("API RESPONSE:", data);
 
       if (!data.success) throw new Error(data.error ?? 'Analysis failed');
 
