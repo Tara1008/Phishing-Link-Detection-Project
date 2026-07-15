@@ -8,7 +8,7 @@ dotenv.config();
 // ----------------------------------------------------------------
 // Connection pool — shared across all requests
 // ----------------------------------------------------------------
-export const pool = mysql.createPool({
+/*export const pool = mysql.createPool({
   host: process.env.DB_HOST || 'localhost',
   port: Number(process.env.DB_PORT) || 3306,
   user: process.env.DB_USER || 'root',
@@ -21,6 +21,23 @@ export const pool = mysql.createPool({
   keepAliveInitialDelay: 10000,
   timezone: '+00:00',
 });
+*/
+
+
+export const pool = mysql.createPool({
+  host: process.env.MYSQLHOST,
+  port: Number(process.env.MYSQLPORT),
+  user: process.env.MYSQLUSER,
+  password: process.env.MYSQLPASSWORD,
+  database: process.env.MYSQLDATABASE,
+  waitForConnections: true,
+  connectionLimit: 10,
+  queueLimit: 0,
+  enableKeepAlive: true,
+  keepAliveInitialDelay: 10000,
+  timezone: '+00:00',
+});
+
 
 // ----------------------------------------------------------------
 // Bootstrap — create DB + tables from schema.sql on first run
