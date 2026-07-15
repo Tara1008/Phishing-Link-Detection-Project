@@ -182,6 +182,7 @@ export default function ScanPage() {
               ⚠️ This tool provides an automated assessment based on URL characteristics only. It does not guarantee that a website is safe or malicious. Always exercise caution.
             </p>
           </motion.div>
+         </>
         )}
       </AnimatePresence>
 
