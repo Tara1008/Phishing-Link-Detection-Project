@@ -51,10 +51,10 @@ export const pool = mysql.createPool({
 export async function bootstrapDatabase(): Promise<void> {
   // First connect WITHOUT database to create it if missing
   const bootstrapConn = await mysql.createConnection({
-    host: process.env.MYSQLHOST || 'localhost',
+    host: process.env.MYSQLHOST ,
     port: Number(process.env.MYSQLPORT) || 3306,
-    user: process.env.MYSQLUSER || 'root',
-    password: process.env.MYSQLPASSWORD || '',
+    user: process.env.MYSQLUSER ,
+    password: process.env.MYSQLPASSWORD ,
     multipleStatements: true,
   });
 
