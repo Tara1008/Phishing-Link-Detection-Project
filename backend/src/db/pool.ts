@@ -23,6 +23,12 @@ dotenv.config();
 });
 */
 
+console.log("ENV:", {
+  MYSQLHOST: process.env.MYSQLHOST,
+  MYSQLPORT: process.env.MYSQLPORT,
+  MYSQLUSER: process.env.MYSQLUSER,
+  MYSQLDATABASE: process.env.MYSQLDATABASE,
+});
 
 export const pool = mysql.createPool({
   host: process.env.MYSQLHOST,
