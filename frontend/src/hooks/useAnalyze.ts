@@ -3,7 +3,10 @@ import { useState, useCallback } from 'react';
 import type { ScanResult } from '../types';
 import toast from 'react-hot-toast';
 
-const api = axios.create({ baseURL: '/api' });
+//const api = axios.create({ baseURL: '/api' });
+const api = axios.create({
+  baseURL: import.meta.env.VITE_API_URL,
+});
 
 export interface UseAnalyzeReturn {
   result:    ScanResult | null;
