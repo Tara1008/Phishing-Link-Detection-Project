@@ -145,6 +145,10 @@ export default function ScanPage() {
       {/* ── Results ──────────────────────────────────────────────── */}
       <AnimatePresence>
         {result && !loading && (
+      //edited here
+      <>
+        {console.log("RESULT:", result)}
+        ///till here
           <motion.div
             ref={resultRef}
             initial={{ opacity: 0 }}
