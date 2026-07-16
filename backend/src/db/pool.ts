@@ -55,6 +55,7 @@ export async function bootstrapDatabase(): Promise<void> {
     port: Number(process.env.MYSQLPORT) || 3306,
     user: process.env.MYSQLUSER ,
     password: process.env.MYSQLPASSWORD ,
+    database: process.env.MYSQLDATABASE,
     multipleStatements: true,
   });
 
