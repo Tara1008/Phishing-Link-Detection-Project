@@ -74,7 +74,7 @@ export async function bootstrapDatabase(): Promise<void> {
     await bootstrapConn.query(sql);
     const [tables] = await bootstrapConn.query("SHOW TABLES");
     console.log("TABLES:", tables);
-    console.log('✅  Database schema initialised');
+    console.log('✅  🚨 NEW BUILD 12345 🚨');
   } catch (err) {
     console.error('❌  Database bootstrap failed:', err);
     throw err;
