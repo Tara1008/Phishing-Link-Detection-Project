@@ -60,12 +60,14 @@ export async function bootstrapDatabase(): Promise<void> {
   });
 
   try {
+    console.log("BOOTSTRAP DATABASE RUNNING");
     let schemaPath = path.join(__dirname, 'schema.sql');
     if (!fs.existsSync(schemaPath)) {
       schemaPath = path.join(process.cwd(), 'src', 'db', 'schema.sql');
     }
     const sql = fs.readFileSync(schemaPath, 'utf8');
-    console.log("Using schema file:", schemaPath);
+    console.log("SCHEMA PATH:", schemaPath);
+//    console.log("Using schema file:", schemaPath);
     console.log(sql.substring(0, 200));
 
     // Execute each statement individually (mysql2 multipleStatements)
