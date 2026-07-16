@@ -65,9 +65,13 @@ export async function bootstrapDatabase(): Promise<void> {
       schemaPath = path.join(process.cwd(), 'src', 'db', 'schema.sql');
     }
     const sql = fs.readFileSync(schemaPath, 'utf8');
+    console.log("Using schema file:", schemaPath);
+    console.log(sql.substring(0, 200));
 
     // Execute each statement individually (mysql2 multipleStatements)
     await bootstrapConn.query(sql);
+    const [tables] = await bootstrapConn.query("SHOW TABLES");
+    console.log("TABLES:", tables);
     console.log('✅  Database schema initialised');
   } catch (err) {
     console.error('❌  Database bootstrap failed:', err);
