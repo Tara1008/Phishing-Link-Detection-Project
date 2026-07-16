@@ -1,11 +1,11 @@
 -- PhishGuard AI - MySQL Schema
 -- Auto-executed on server startup
 
-CREATE DATABASE IF NOT EXISTS phishguard
-  CHARACTER SET utf8mb4
-  COLLATE utf8mb4_unicode_ci;
+--CREATE DATABASE IF NOT EXISTS phishguard
+--CHARACTER SET utf8mb4
+--  COLLATE utf8mb4_unicode_ci;
 
-USE phishguard;
+--USE phishguard;
 
 -- ----------------------------------------------------------------
 -- scan_results: stores every URL analysis
